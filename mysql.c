@@ -148,6 +148,10 @@ int main(int argc, char *argv[]) {
 	}
 } /* main() */
 
+/*
+ * This method will insert the information 
+ * into the mysql database.
+ */
 
 void insert_information(MYSQL *con, char *query) {
 	if (mysql_query(con, query)) {
@@ -160,7 +164,7 @@ void insert_information(MYSQL *con, char *query) {
     mysql_close(con);
     return;
   }
-}
+} /* insert_information() */
 
 /* 
  * This method will show the imformation of the table.
@@ -182,16 +186,14 @@ void show_information(MYSQL *con) {
 
 /*
  * This method will delete the information of a user.
- *
  */
 
 void delete_information(MYSQL *con, char *query) {
 	return; 
-}
+} /* delete_information() */
 
 /*
  * This method will check if the user exists. 
- *
  */
 
 int check_information(MYSQL *con, char *name) {
@@ -210,4 +212,4 @@ int check_information(MYSQL *con, char *name) {
   } 
   mysql_free_result(result);
   return USER_AVAIL;
-}
+} /* check_information() */
